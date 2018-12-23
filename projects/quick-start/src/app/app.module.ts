@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { HighlightDirective } from './shared/highlight.directive';
+import { DataFormatterPipe } from './shared/data-formatter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     StocksComponent,
-    HighlightDirective
+    HighlightDirective,
+    DataFormatterPipe
   ],
   imports: [
     BrowserModule
