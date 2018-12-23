@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StockService } from './stock.service';
 
 @Component({
   selector: 'app-stocks',
@@ -9,10 +10,14 @@ export class StocksComponent implements OnInit {
 
   title = 'List of stocks: ';
   stocks = ['Apple', 'IBM', 'Google'];
+  ss: StockService;
 
-  constructor() { }
+  constructor(ss: StockService) {
+    this.ss = ss;
+  }
 
   ngOnInit() {
+    this.stocks = this.ss.getStocks();
   }
 
 }
