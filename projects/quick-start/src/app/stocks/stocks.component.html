@@ -7,3 +7,15 @@
     {{stock}}
   </li>
 </ul>
+
+<hr>
+<ul *ngIf="showSM">
+  <li *ngFor="let market of stockMarkets">
+    <div [ngSwitch]="market">
+      <div *ngSwitchCase="'NYSE'">New York Stock Exchange</div>
+      <div *ngSwitchCase="'LSE'">London Stock Exchange</div>
+      <div *ngSwitchDefault>{{market}}</div>
+    </div>
+  </li>
+</ul>
+

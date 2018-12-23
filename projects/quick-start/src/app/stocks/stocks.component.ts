@@ -11,6 +11,8 @@ export class StocksComponent implements OnInit {
   title = 'List of stocks: ';
   stocks = ['Apple', 'IBM', 'Google'];
   ss: StockService;
+  stockMarkets = ['NYSE', 'NASDAQ', 'EUROEXT', 'HKSE', 'LSE'];
+  showSM = true;
 
   constructor(ss: StockService) {
     this.ss = ss;
