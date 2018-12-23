@@ -13,6 +13,7 @@ export class StocksComponent implements OnInit {
   ss: StockService;
   stockMarkets = ['NYSE', 'NASDAQ', 'EUROEXT', 'HKSE', 'LSE'];
   showSM = true;
+  testColor = 'blue';
 
   constructor(ss: StockService) {
     this.ss = ss;
@@ -20,6 +21,7 @@ export class StocksComponent implements OnInit {
 
   ngOnInit() {
     this.stocks = this.ss.getStocks();
+    // this.testColor = 'blue';
   }
 
 }
