@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { HighlightDirective } from './shared/highlight.directive';
 import { DataFormatterPipe } from './shared/data-formatter.pipe';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DataFormatterPipe } from './shared/data-formatter.pipe';
     DataFormatterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
