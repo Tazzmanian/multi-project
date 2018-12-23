@@ -1,11 +1,33 @@
 <!--The content below is only a placeholder and can be replaced.-->
 {{today | date: "dd/MMM/yyy hh:mm a"}}
 
-<div style="text-align:center">
+<div style="text-align:center" *ngIf="profile">
   <h1>
     {{ title }}!
   </h1>
+  Name: {{profile.name}}
 </div>
+<div style="text-align:center" *ngIf="!profile">
+  <h1>
+    {{ title }}!
+  </h1>
+  Name: No name
+</div>
+
+<div style="text-align:center" *ngIf="profile else noProfile">
+  <h1>
+    {{ title }}!
+  </h1>
+  ID: {{profile.id}}
+</div>
+<ng-template #noProfile>
+  <h1>
+    {{ title }}!
+  </h1>
+  ID: No ID
+</ng-template>
+
+
 <app-stocks></app-stocks>
 
 <p>This has no highlight</p>

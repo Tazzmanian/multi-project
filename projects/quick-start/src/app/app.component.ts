@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Quick Start';
   today = new Date();
+
+  profile = {id: 1001, name: 'James Bond', role: 'Administrator'};
 }
