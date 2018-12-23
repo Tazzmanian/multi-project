@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StocksComponent } from './stocks/stocks.component';
@@ -20,7 +22,8 @@ import { BondsDirective } from './bonds.directive';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

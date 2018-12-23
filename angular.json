@@ -154,6 +154,7 @@
               "projects/quick-start/src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/quick-start/src/styles.css"
             ],
             "scripts": []
