@@ -14,6 +14,8 @@ export class StocksComponent implements OnInit {
   stockMarkets = ['NYSE', 'NASDAQ', 'EUROEXT', 'HKSE', 'LSE'];
   showSM = true;
   testColor = 'blue';
+  isViolet = true;
+  isCentered = true;
 
   constructor(ss: StockService) {
     this.ss = ss;

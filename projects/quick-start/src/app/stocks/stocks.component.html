@@ -9,7 +9,27 @@
 </ul>
 
 <hr>
-<ul *ngIf="showSM">
+<ul *ngIf="showSM" [ngClass]="'pink centered'">
+  <li *ngFor="let market of stockMarkets">
+    <div [ngSwitch]="market">
+      <div *ngSwitchCase="'NYSE'">New York Stock Exchange</div>
+      <div *ngSwitchCase="'LSE'">London Stock Exchange</div>
+      <div *ngSwitchDefault>{{market}}</div>
+    </div>
+  </li>
+</ul>
+<hr>
+<ul *ngIf="showSM" [ngClass]="['pink', 'centered']">
+  <li *ngFor="let market of stockMarkets">
+    <div [ngSwitch]="market">
+      <div *ngSwitchCase="'NYSE'">New York Stock Exchange</div>
+      <div *ngSwitchCase="'LSE'">London Stock Exchange</div>
+      <div *ngSwitchDefault>{{market}}</div>
+    </div>
+  </li>
+</ul>
+<hr>
+<ul *ngIf="showSM" [ngClass]="{pink:isViolet, centered:isCentered}">
   <li *ngFor="let market of stockMarkets">
     <div [ngSwitch]="market">
       <div *ngSwitchCase="'NYSE'">New York Stock Exchange</div>
