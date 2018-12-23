@@ -1,45 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<p>
-  <ngb-alert [dismissible]="false">
-    <strong>Warning!</strong> Better check yourself, you're not looking too good.
-  </ngb-alert>
-</p>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-{{today | date: "dd/MMM/yyy hh:mm a"}}
-
-<div style="text-align:center" *ngIf="profile">
-  <h1>
-    {{ title }}!
-  </h1>
-  Name: {{profile.name}}
-</div>
-<div style="text-align:center" *ngIf="!profile">
-  <h1>
-    {{ title }}!
-  </h1>
-  Name: No name
-</div>
-
-<div style="text-align:center" *ngIf="profile else noProfile">
-  <h1>
-    {{ title }}!
-  </h1>
-  ID: {{profile.id}}
-</div>
-<ng-template #noProfile>
-  <h1>
-    {{ title }}!
-  </h1>
-  ID: No ID
-</ng-template>
-
-
-<app-stocks></app-stocks>
-
-<p>This has no highlight</p>
-<p appHighlight>This has highlight</p>
-
-<a routerLink="/stocks"> Stocks Link</a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/stocks">Stocks</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
 <router-outlet></router-outlet>
+</div>
+
 
