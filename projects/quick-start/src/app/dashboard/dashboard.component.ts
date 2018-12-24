@@ -8,6 +8,8 @@ import { StockService } from '../stocks/stock.service';
 })
 export class DashboardComponent implements OnInit {
 
+  stocks: string[];
+
   constructor(private ss: StockService) { }
 
   ngOnInit() {
@@ -18,6 +20,7 @@ export class DashboardComponent implements OnInit {
     this.ss.getStocksAPI().subscribe(
       data => {
         console.log(data);
+        this.stocks = data;
       },
       err => {
         console.log(err);

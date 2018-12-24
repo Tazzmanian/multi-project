@@ -3,5 +3,10 @@
   <p class="lead">Stocks, Bonds, Funds.</p>
   <hr class="my-4">
   <p>Quick Start.</p>
+  <ul>
+    <li *ngFor="let stock of stocks">
+      {{stock.id}} | {{stock.name}} | {{stock.stockCode}}
+    </li>
+  </ul>
   <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
 </div>
