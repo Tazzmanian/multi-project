@@ -10,6 +10,7 @@ import { DataFormatterPipe } from './shared/data-formatter.pipe';
 import { routing } from './app.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BondsDirective } from './bonds.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BondsDirective } from './bonds.directive';
   imports: [
     BrowserModule,
     routing,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
