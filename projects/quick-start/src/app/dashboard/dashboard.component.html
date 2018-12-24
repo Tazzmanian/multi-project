@@ -19,5 +19,12 @@
       </tr>
     </table>
   </div>
+  <hr>
+  <div>
+    <h2>Add Stock</h2>
+    Stock Code: <input #code />
+    Stock Name: <input #name />
+    <button type="button" class="btn btn-primary mx-2" (click)="createStock(code.value, name.value)">CREATE</button>
+  </div>
   <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
 </div>

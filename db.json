@@ -1,26 +1,46 @@
 {
-    "posts": [
-        { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-        { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" },
-    "stocks": [
-        {
-            "id": 1,
-            "stockCode": "IBM",
-            "name": "International Business Machines"
-        },
-        {
-            "id": 2,
-            "stockCode": "GOOG",
-            "name": "Google"
-        },
-        {
-            "id": 3,
-            "stockCode": "APPL",
-            "name": "Apple"
-        }
-    ]
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "stocks": [
+    {
+      "id": 1,
+      "stockCode": "IBM",
+      "name": "International Business Machines"
+    },
+    {
+      "id": 2,
+      "stockCode": "GOOG",
+      "name": "Google"
+    },
+    {
+      "id": 3,
+      "stockCode": "APPL",
+      "name": "Apple"
+    },
+    {
+      "name": "fasdfaddf",
+      "stockCode": "fsdfsdfa",
+      "id": 4
+    },
+    {
+      "name": "tesla",
+      "stockCode": "tesl",
+      "id": 5
+    }
+  ]
 }

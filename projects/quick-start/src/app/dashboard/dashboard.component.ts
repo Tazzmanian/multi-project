@@ -28,4 +28,14 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  createStock(code: string, name: string) {
+    console.log(code, name);
+    this.ss.createStock(code, name)
+      .subscribe(data => {
+        this.getAllStocks();
+      }, err => {
+        console.log(err);
+      });
+  }
+
 }
