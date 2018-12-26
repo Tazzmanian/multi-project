@@ -18,7 +18,7 @@
   },
   "stocks": [
     {
-      "name": "Googlesdfsfd",
+      "name": "Googles",
       "stockCode": "GOOG",
       "id": 2
     },
@@ -36,11 +36,6 @@
       "name": "tesla",
       "stockCode": "tesl",
       "id": 5
-    },
-    {
-      "name": "ibm ",
-      "stockCode": "IBM",
-      "id": 6
     }
   ]
 }

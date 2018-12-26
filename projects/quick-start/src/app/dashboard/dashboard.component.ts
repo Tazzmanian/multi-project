@@ -46,17 +46,16 @@ export class DashboardComponent implements OnInit {
     this.ss.updateStock(this.selectedStock.id, stock, name).subscribe(data => {
       // this.stocks.filter(s => s.stockId === data.stockId).
       console.log('fdfasda', data);
-      this.stocks.forEach(x => {
-        x = data;
-        this.stocks = [...this.stocks];
-      });
-      location.reload();
+      this.getAllStocks();
+      // location.reload();
     });
   }
 
   deleteStock(id: string) {
-    this.ss.deleteStock(id).subscribe();
-    location.reload();
+    this.ss.deleteStock(id).subscribe(data => {
+      this.getAllStocks();
+    });
+    // location.reload();
   }
 
   loadDetails(stock: any) {
