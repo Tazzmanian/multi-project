@@ -8,7 +8,10 @@ import { StockService } from '../stocks/stock.service';
 })
 export class DashboardComponent implements OnInit {
 
-  stocks: string[];
+  stocks: any[];
+
+  selectedStock: any;
+  updateEnabled = false;
 
   constructor(private ss: StockService) { }
 
@@ -36,6 +39,24 @@ export class DashboardComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+  }
+
+  updateStock(stock: string, name: string) {
+    this.updateEnabled = false;
+    this.ss.updateStock(this.selectedStock.id, stock, name).subscribe(data => {
+      // this.stocks.filter(s => s.stockId === data.stockId).
+      console.log('fdfasda', data);
+      this.stocks.forEach(x => {
+        x = data;
+        this.stocks = [...this.stocks];
+      });
+      location.reload();
+    });
+  }
+
+  loadDetails(stock: any) {
+    this.updateEnabled = true;
+    this.selectedStock = stock;
   }
 
 }
