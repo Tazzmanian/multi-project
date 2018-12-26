@@ -20,7 +20,10 @@
       </thead>
       <tr *ngFor="let stock of stocks">
         <td>{{stock.id}}</td>
-        <td><button type="button" class="btn btn-warning" (click)="loadDetails(stock)">UPDATE</button></td>
+        <td>
+          <button type="button" class="btn btn-warning" (click)="loadDetails(stock)">UPDATE</button>
+          <button type="button" class="btn btn-danger" (click)="deleteStock(stock.id)">DELETE</button>
+        </td>
         <td>{{stock.name}}</td>
         <td>{{stock.stockCode}}</td>
       </tr>

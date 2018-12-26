@@ -54,6 +54,11 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  deleteStock(id: string) {
+    this.ss.deleteStock(id).subscribe();
+    location.reload();
+  }
+
   loadDetails(stock: any) {
     this.updateEnabled = true;
     this.selectedStock = stock;
