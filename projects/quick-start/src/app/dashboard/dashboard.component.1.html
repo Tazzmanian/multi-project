@@ -3,16 +3,19 @@
   <div class="row">
     <h3>Angular 6 Template-Driven Form Validation</h3>
     <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" >
+      Is it valid? {{f.form.valid}}
         <div class="form-group">
             <label for="stockName">Stock Name</label>
-            <input type="text" class="form-control" name="stockName" [(ngModel)]="newStock.stockName" #stockName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stockName.invalid }" required />
+            <input type="text" class="form-control" name="stockName" [(ngModel)]="newStock.stockName" #stockName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stockName.invalid }" required ref-stockNameRef/>
+            Ref example: {{stockNameRef.value}}
             <div *ngIf="f.submitted && stockName.invalid" class="invalid-feedback">
                 <div *ngIf="stockName.errors.required">Stock Name is required</div>
             </div>
         </div>
         <div class="form-group">
             <label for="lastName">Stock Code</label>
-            <input type="text" class="form-control" name="stockCode" [(ngModel)]="newStock.stockCode" #stockCode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stockCode.invalid }" required />
+            <input type="text" class="form-control" name="stockCode" [(ngModel)]="newStock.stockCode" #stockCode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stockCode.invalid }" required #stockCodeRef/>
+            # example: {{stockCodeRef.value}}
             <div *ngIf="f.submitted && stockCode.invalid" class="invalid-feedback">
                 <div *ngIf="stockCode.errors.required">Last Name is required</div>
             </div>
