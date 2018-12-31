@@ -1,0 +1,29 @@
+<div class="container" *ngIf="!submited"> 
+  <h2> Add New Stock</h2>
+  <div class="row">
+    <h3>Angular 6 Template-Driven Form Validation</h3>
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" >
+        <div class="form-group">
+            <label for="stockName">Stock Name</label>
+            <input type="text" class="form-control" name="stockName" [(ngModel)]="newStock.stockName" #stockName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stockName.invalid }" required />
+            <div *ngIf="f.submitted && stockName.invalid" class="invalid-feedback">
+                <div *ngIf="stockName.errors.required">Stock Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Stock Code</label>
+            <input type="text" class="form-control" name="stockCode" [(ngModel)]="newStock.stockCode" #stockCode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stockCode.invalid }" required />
+            <div *ngIf="f.submitted && stockCode.invalid" class="invalid-feedback">
+                <div *ngIf="stockCode.errors.required">Last Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="submited"> 
+  Submited!
+</div>

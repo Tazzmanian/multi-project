@@ -1,22 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { StockService } from '../stocks/stock.service';
+import { Stock } from '../stocks/stock';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
+  templateUrl: './dashboard.component.1.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 
-  stocks: any[];
+  stocks: Stock[];
 
   selectedStock: any;
   updateEnabled = false;
+  submited = false;
+  newStock = new Stock(0, '', '');
+  model: any = {};
 
   constructor(private ss: StockService) { }
 
   ngOnInit() {
     this.getAllStocks();
+  }
+
+  onSubmit() {
+    // console.log(form);
+    this.submited = true;
+  }
+
+  cancel() {
+    this.submited = false;
+    this.newStock = new Stock(0, '', '');
   }
 
   getAllStocks() {
