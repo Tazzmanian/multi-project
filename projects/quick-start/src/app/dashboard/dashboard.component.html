@@ -10,9 +10,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <h2>Add Stock</h2>
-        Stock Code: <input #code />
-        Stock Name: <input #name />
+        <form>
+          <div class="form-group">
+            <label for="stockCode"> Stock Code: </label>
+              <input #code id="stockCode" class="form-control" required />
+            <label for="stockName"> Stock Name: </label>
+              <input #name id="stockName" class="form-control" required />
+
+              <button type="submit" class="btn btn-warning">Validate</button>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
