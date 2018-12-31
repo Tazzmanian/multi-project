@@ -24,6 +24,23 @@
   </div>
 </div>
 
-<div *ngIf="submited"> 
-  Submited!
+<div *ngIf="submited" class="container"> 
+  <h2>Submited!</h2>
+
+  <div class="form-group row">
+    <label class="col-md-2">Stock name</label>
+    <div class="col-md-10">
+      <input type="text" placeholder="{{newStock.stockName}}" readonly/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2">Stock code</label>
+    <div class="col-md-10">
+      <input type="text" placeholder="{{newStock.stockCode}}" readonly/>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <button class="btn btn-primary mt-2" (click)="cancel()">Cancel</button>
+  </div> 
 </div>
