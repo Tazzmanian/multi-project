@@ -2,26 +2,36 @@
   <h2> Add New Stock</h2>
   <div class="row">
     <h3>Angular 6 Template-Driven Form Validation</h3>
-    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" >
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       Is it valid? {{f.form.valid}}
         <div class="form-group">
             <label for="stockName">Stock Name</label>
-            <input type="text" class="form-control" name="stockName" [(ngModel)]="newStock.stockName" #stockName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stockName.invalid }" required ref-stockNameRef/>
+            <input type="text" class="form-control" name="stockName" 
+              [(ngModel)]="newStock.stockName" [ngClass]="{ 'is-invalid': f.submitted && stockName.invalid }" required ref-stockNameRef="ngModel"/>
             Ref example: {{stockNameRef.value}}
+            CSS Class: {{stockNameRef.valid}}, {{stockNameRef.pristine}}
             <div *ngIf="f.submitted && stockName.invalid" class="invalid-feedback">
                 <div *ngIf="stockName.errors.required">Stock Name is required</div>
+            </div>
+            <div class="alert alert-danger" [hidden]="stockNameRef.valid || stockNameRef.pristine">
+              Please enter the value for the stock name
             </div>
         </div>
         <div class="form-group">
             <label for="lastName">Stock Code</label>
-            <input type="text" class="form-control" name="stockCode" [(ngModel)]="newStock.stockCode" #stockCode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stockCode.invalid }" required #stockCodeRef/>
+            <input type="text" class="form-control" name="stockCode" 
+              [(ngModel)]="newStock.stockCode" [ngClass]="{ 'is-invalid': f.submitted && stockCode.invalid }" required #stockCodeRef="ngModel"/>
             # example: {{stockCodeRef.value}}
+            CSS Class: {{stockCodeRef.valid}}, {{stockCodeRef.pristine}}
             <div *ngIf="f.submitted && stockCode.invalid" class="invalid-feedback">
                 <div *ngIf="stockCode.errors.required">Last Name is required</div>
             </div>
+            <div class="alert alert-danger" [hidden]="stockCodeRef.valid || stockCodeRef.pristine">
+              Please enter the value for the stock code
+            </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary" [disabled]="!f.form.valid">Submit</button>
         </div>
     </form>
   </div>
