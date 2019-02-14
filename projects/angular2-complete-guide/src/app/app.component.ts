@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular2-complete-guide';
   name = '';
+  selected: string;
+
+  onNavigate(event: string) {
+    this.selected = event;
+  }
 }

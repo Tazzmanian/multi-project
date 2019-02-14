@@ -1,21 +1,9 @@
-<app-header></app-header>
+<app-header (selected)="onNavigate($event)"></app-header>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list>
-        </div>
-        
-    </div>
-</div>
-
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Dropdown button
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMM">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="selected == 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="selected == 'list'"></app-shopping-list>
     </div>
   </div>
+</div>
