@@ -13,9 +13,7 @@ export class DropdownDirective {
   constructor(private renderer: Renderer2) { }
 
   @HostListener('click') toggleOpen() {
-    console.log(this.isOpen);
     this.isOpen = !this.isOpen;
-    console.log(this.dropdownList.nativeElement);
     this.toggleList();
   }
 
