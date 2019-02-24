@@ -1,4 +1,4 @@
-<a href="#" class="d-flex justify-content-between border p-2" (click)="onSelected()">
+<a class="d-flex justify-content-between border p-2" [routerLink]="[index]" routerLinkActive="active">
   <div class="">
       <h4 class="list-group-item-heading">{{recipe.name}}</h4>
       <p class="list-group-item-text">{{recipe.description}}</p>
