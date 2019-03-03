@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "quick-start": "ng serve --project quick-start",
-    "ng2cg": "ng serve --project angular2-complete-guide --open"
+    "ng2cg": "ng serve --project angular2-complete-guide --open",
+    "json-server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
