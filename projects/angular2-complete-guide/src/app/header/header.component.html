@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <a class="navbar-brand" routerLink="/">Recipe Book</a>
-  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-      aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -14,7 +14,19 @@
       </li>
     </ul>
     <ul class="navbar-nav mx-5">
-      <li class="nav-item dropdown" appDropdown>
+      <ng-template [ngIf]="!ass.isAuthenticated()">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signin">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup">Register</a>
+        </li>
+      </ng-template>
+      <li class="nav-item" *ngIf="ass.isAuthenticated()">
+        <a class="nav-link" style="cursor:pointer" (click)="onLogout()">Logout</a>
+      </li>
+
+      <li class="nav-item dropdown" appDropdown *ngIf="ass.isAuthenticated()">
         <a class="nav-link dropdown-toggle" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
         <div class="dropdown-menu" aria-labelledby="dropdownId" #dropdownList>
           <a class="dropdown-item" (click)="onSave()">Save Data</a>
