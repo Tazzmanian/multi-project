@@ -20,13 +20,11 @@ import { SharedModule } from '../shared/shared.module';
       RecipeDetailComponent,
    ],
    imports: [
+      CommonModule,
       ReactiveFormsModule,
       RecipesRoutingModule,
       SharedModule
    ],
    providers: [],
-   bootstrap: [
-      RecipesComponent
-   ]
 })
 export class RicepesModule { }
