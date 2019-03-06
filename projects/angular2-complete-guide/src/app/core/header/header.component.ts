@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataStorageService } from '../../shared/data-storage';
 import { AuthService } from '../../auth/auth.service';
+import { assertDataInRange } from '@angular/core/src/render3/state';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +11,14 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  ass: AuthService;
+
   constructor(private dss: DataStorageService,
-    private ass: AuthService
+    private _ass: AuthService
     ) { }
 
   ngOnInit() {
+    this.ass = this._ass;
   }
 
   onSave() {
