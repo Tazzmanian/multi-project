@@ -10,23 +10,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataStorageService } from './shared/data-storage';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
-import { RicepesModule } from './recipes/recipes.module';
 import { SharedModule } from './shared/shared.module';
-import { ShoppinListModule } from './shopping-list/shopping-list.module';
 import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       HeaderComponent,
+      HomeComponent,
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       AppRoutingModule,
-      RicepesModule,
       SharedModule,
-      ShoppinListModule,
       AuthModule
    ],
    providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuardService],
