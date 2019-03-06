@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ShoppingListComponent } from './shopping-list.component';
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
+import { ShoppingListRoutingModule } from './shopping-list.routing';
 
 @NgModule({
    declarations: [
@@ -13,6 +14,7 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
       CommonModule,
       FormsModule,
       ReactiveFormsModule,
+      ShoppingListRoutingModule
    ],
    providers: [],
 })
