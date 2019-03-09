@@ -14,7 +14,7 @@ import { ShoppingListRoutingModule } from './shopping-list.routing';
       CommonModule,
       FormsModule,
       ReactiveFormsModule,
-      ShoppingListRoutingModule
+      // ShoppingListRoutingModule
    ],
    providers: [],
 })
