@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { DropdownDirective } from './dropdown.directive';
 import { CommonModule } from '@angular/common';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 @NgModule({
@@ -10,6 +11,6 @@ import { CommonModule } from '@angular/common';
    exports: [
        CommonModule,
        DropdownDirective
-   ]
+   ],
 })
 export class SharedModule { }
