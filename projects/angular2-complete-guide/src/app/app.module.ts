@@ -10,6 +10,8 @@ import { CoreModule } from './core/core.modul';
 import { StoreModule } from '@ngrx/store';
 import { ShoppinListModule } from './shopping-list/shopping-list.module';
 import { reducers } from './store/app.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './auth/store/auth.effects';
 
 @NgModule({
    declarations: [
@@ -23,7 +25,8 @@ import { reducers } from './store/app.reducers';
       AuthModule,
       CoreModule,
       ShoppinListModule,
-      StoreModule.forRoot(reducers)
+      StoreModule.forRoot(reducers),
+      EffectsModule.forRoot([AuthEffects])
    ],
    bootstrap: [
       AppComponent
