@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
-import { RecipeService } from '../recipe.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as ShoppingListActions from '../../shopping-list/store/shopping-list.actions';
@@ -47,7 +46,7 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   onDelete() {
-    // this.rs.deleteRecipe(this.id);
+    console.log('TTT', this.id);
     this.store.dispatch(new RecipeActions.DeleteRecipes(this.id));
     this.router.navigate(['/recipes']);
   }
