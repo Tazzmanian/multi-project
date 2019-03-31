@@ -11,7 +11,9 @@
     "quick-start": "ng serve --project quick-start",
     "ng2cg": "ng serve --project angular2-complete-guide --open",
     "ng2cg:aot": "ng serve --project angular2-complete-guide --prod --open --aot",
-    "json-server": "json-server --watch db.json"
+    "ng2cg:build": "ng build --project angular2-complete-guide --prod",
+    "json-server": "json-server --watch db.json",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
   "private": true,
   "dependencies": {
@@ -20,15 +22,20 @@
     "@angular/compiler": "~7.1.0",
     "@angular/core": "~7.1.0",
     "@angular/forms": "~7.1.0",
+    "@angular/http": "^7.2.11",
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
+    "@angular/platform-server": "^7.2.11",
     "@angular/router": "~7.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.1.0",
     "@ngrx/effects": "^7.3.0",
     "@ngrx/router-store": "^7.3.0",
     "@ngrx/store": "^7.3.0",
     "@ngrx/store-devtools": "^7.3.0",
+    "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "firebase": "^5.8.5",
     "jquery": "^3.3.1",
     "popper": "^1.0.1",
@@ -55,8 +62,10 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
+    "ts-loader": "^5.3.3",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "webpack-cli": "^3.3.0"
   }
 }

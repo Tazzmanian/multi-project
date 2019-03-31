@@ -322,6 +322,14 @@
             }
           }
         },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/recipe-book",
+            "main": "projects/angular2-complete-guide/src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          }
+        },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
